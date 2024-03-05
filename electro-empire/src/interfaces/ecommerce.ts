@@ -5,3 +5,14 @@ export interface IArticle {
     Buy: string;
     "Unique Entry ID": string;
 }
+
+export interface IUser {
+    lastname : string;
+    firstname : string;
+    adress : string;
+    zipcode: string;
+    city: string;
+    card : string;
+    cardDate : Date;
+
+}

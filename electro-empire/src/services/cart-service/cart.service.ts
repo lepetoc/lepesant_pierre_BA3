@@ -44,4 +44,8 @@ export class CartService {
     this.items = this.items.filter((item) => item.id !== id);
     return this.items;
   }
+
+  public static IsCartEmpty() {
+    return this.items.length === 0;
+  }
 }

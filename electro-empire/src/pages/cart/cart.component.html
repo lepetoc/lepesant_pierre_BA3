@@ -5,7 +5,7 @@
         <span class="right">
              x {{ product.price }}  - {{ product.totalPrice}}
         </span>
-        <span class="right"> <input type="number" value="{{ product.quantity }}" #inputField (change)="CalculateTotal(product, +inputField.value)"></span>
+        <span class="right"> <input type="number" value="{{ product.quantity }}" #inputField (change)="CalculateTotal(product, +inputField.value)" oninput="this.value = Math.max(1, Math.abs(this.value))"></span>
     </li>
     <li class="right"> 
         <button (click)="ClearCart()"> Clear cart</button> 

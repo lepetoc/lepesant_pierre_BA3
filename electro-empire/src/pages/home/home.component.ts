@@ -13,12 +13,8 @@ import { CartService } from '../../services/cart-service/cart.service';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-  public form: FormGroup;
 
   constructor(private ecommerceService: EcommerceService, private cartService: CartService) { 
-    this.form = new FormGroup({
-      amount: new FormControl(1),
-    });
   }
 
   public articles : IArticle[] = [];
@@ -36,7 +32,7 @@ export class HomeComponent {
     });
   }
 
-  OnSubmit(product: IArticle) {
-    CartService.addToCart(product, this.form.get('amount')!.value);
+  OnSubmit(product: IArticle, amount: number) {
+    CartService.addToCart(product, amount);
   }
 }

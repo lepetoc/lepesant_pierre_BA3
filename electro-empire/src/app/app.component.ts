@@ -11,17 +11,17 @@ import { EcommerceService } from '../services/ecommerce-service/ecommerce-servic
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
-export class AppComponent implements OnInit{
+export class AppComponent{
   constructor(private eCommerceService: EcommerceService) {}
 
-  ngOnInit() {
-    this.eCommerceService.getArticles().subscribe({
-      next: (data) => {
-        console.log(data);
-      },
-      error: (err) => {
-        console.error(err);
-      },
-    });
-  }
+  // ngOnInit() {
+  //   this.eCommerceService.getArticles().subscribe({
+  //     next: (data) => {
+  //       console.log(data);
+  //     },
+  //     error: (err) => {
+  //       console.error(err);
+  //     },
+  //   });
+  // }
 }

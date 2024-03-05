@@ -4,16 +4,8 @@
     <img src="{{ item['Closet Image'] }}" alt="" />
     <p>{{ item.Name }}</p>
     <p>{{ item.Buy }}</p>
-    <form [formGroup]="form">
-      <label for="amount">Amount:</label>
-      <input
-        type="number"
-        formControlName="amount"
-        required
-        min="1"
-        max="999"
-      />
-      <button (click)="OnSubmit(item)">Add to cart</button>
-    </form>
+
+    <input type="number" required min="1" max="999" #inputField value="1" oninput="this.value = Math.max(1, Math.abs(this.value))"/>
+    <button (click)="OnSubmit(item, +inputField.value)">Add to cart</button>
   </div>
 </div>

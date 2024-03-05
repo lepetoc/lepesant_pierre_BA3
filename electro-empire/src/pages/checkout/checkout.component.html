@@ -1,1 +1,32 @@
-<p>checkout works!</p>
+<form [formGroup]="form">
+  <label for="lastname">First name:</label>
+  <input type="text" class="lastname" formControlName="lastname" required />
+  <br />
+
+  <label for="firstName">First name:</label>
+  <input type="text" class="firstname" formControlName="firstname" required />
+  <br />
+
+  <label for="adress">Address:</label>
+  <input type="text" class="adress" formControlName="adress" required />
+  <br />
+
+  <label for="zipcode">Zip code:</label>
+  <input type="text" class="zipcode" formControlName="zipcode" maxlength="5"required />
+  <br />
+
+  <label for="city">City:</label>
+  <input type="text" class="city" formControlName="city" required />
+  <br />
+
+  <label for="card">Card:</label>
+  <input type="text" class="card" formControlName="card" required maxlength="16"/>
+  <br />
+
+  <label for="cardDate">Card Date:</label>
+  <input type="date" class="cardDate" formControlName="cardDate" min="{{today}}" required />
+  <br />
+
+  <button (click)="OnCancel()">Cancel</button>
+  <button (click)="OnSubmit()">Finalize my purchase</button>
+</form>
