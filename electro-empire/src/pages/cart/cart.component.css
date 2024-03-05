@@ -1,0 +1,32 @@
+li:nth-child(even) {
+  background-color: lightgray;
+}
+
+li:nth-last-child(1) {
+  background-color: lightgray;
+}
+
+li {
+  padding: 10px;
+  margin: 10px;
+}
+
+.right {
+  float: right;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+p{
+    text-align: center;
+    
+    text-decoration: none;
+}

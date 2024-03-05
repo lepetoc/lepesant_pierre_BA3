@@ -3,4 +3,5 @@ export interface IArticle {
     "Closet Image": string;
     "Seasonal Availability": string;
     Buy: string;
+    "Unique Entry ID": string;
 }

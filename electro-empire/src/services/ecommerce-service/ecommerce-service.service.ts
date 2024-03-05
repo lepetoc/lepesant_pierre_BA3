@@ -21,6 +21,7 @@ export class EcommerceService {
               "Closet Image": article["Closet Image"],
               "Seasonal Availability": article["Seasonal Availability"],
               Buy: article.Buy,
+              "Unique Entry ID": article["Unique Entry ID"],
             };
           });
         })

@@ -1,1 +1,17 @@
-<p>cart works!</p>
+<ul *ngIf="items.length != 0">
+    <li *ngFor="let product of items">
+        <span>{{ product.name }}</span>
+        <span class="right"> <button (click)="RemoveItem(product.id)"> Remove </button></span>
+        <span class="right">
+             x {{ product.price }}  - {{ product.totalPrice}}
+        </span>
+        <span class="right"> <input type="number" value="{{ product.quantity }}" #inputField (change)="CalculateTotal(product, +inputField.value)"></span>
+    </li>
+    <li class="right"> 
+        <button (click)="ClearCart()"> Clear cart</button> 
+        Total: {{ total | currency }} 
+        <button routerLink="/checkout">Checkout</button>
+    </li>
+</ul>
+
+<p *ngIf="items.length == 0"> Your cart is empty</p>
