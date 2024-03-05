@@ -1,16 +1,16 @@
-<ul *ngIf="items.length != 0">
+<ul *ngIf="items.length != 0" >
     <li *ngFor="let product of items">
         <span>{{ product.name }}</span>
-        <span class="right"> <button (click)="RemoveItem(product.id)"> Remove </button></span>
+        <span class="right"> <button (click)="RemoveItem(product.id)" class="btn btn-danger"> Remove </button></span>
         <span class="right">
              x {{ product.price }}  - {{ product.totalPrice}}
         </span>
         <span class="right"> <input type="number" value="{{ product.quantity }}" #inputField (change)="CalculateTotal(product, +inputField.value)" oninput="this.value = Math.max(1, Math.abs(this.value))"></span>
     </li>
     <li class="right"> 
-        <button (click)="ClearCart()"> Clear cart</button> 
+        <button (click)="ClearCart()" class="btn btn-danger" > Clear cart</button> 
         Total: {{ total | currency }} 
-        <button routerLink="/checkout">Checkout</button>
+        <button routerLink="/checkout" class="btn btn-success">Checkout</button>
     </li>
 </ul>
 

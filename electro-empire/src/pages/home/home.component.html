@@ -1,11 +1,27 @@
 <div class="grid-container">
-  <div class="grid-item" *ngFor="let item of articles">
+  <div class="grid-item card" *ngFor="let item of articles">
     <p>{{ item["Seasonal Availability"] }}</p>
-    <img src="{{ item['Closet Image'] }}" alt="" />
+    <img src="{{ item['Closet Image'] }}" alt="" class="card-img-top"/>
     <p>{{ item.Name }}</p>
     <p>{{ item.Buy }}</p>
 
-    <input type="number" required min="1" max="999" #inputField value="1" oninput="this.value = Math.max(1, Math.abs(this.value))"/>
-    <button (click)="OnSubmit(item, +inputField.value)">Add to cart</button>
+    <div class="input-group mb-3">
+      <input
+        type="number"
+        required
+        min="1"
+        max="999"
+        #inputField
+        value="1"
+        oninput="this.value = Math.max(1, Math.abs(this.value))"
+        class="form-control"
+      />
+      <button
+        (click)="OnSubmit(item, +inputField.value)"
+        class="btn btn-success"
+      >
+        Add to cart
+      </button>
+    </div>
   </div>
 </div>
